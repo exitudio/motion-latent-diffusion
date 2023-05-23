@@ -25,6 +25,11 @@ class MldTextEncoder(nn.Module):
         self.latent_dim = latent_dim
 
         self.tokenizer = AutoTokenizer.from_pretrained(modelpath)
+
+        # [INFO] Mock avoid git-lfs from "AutoModel.from_pretrained"
+        # self.text_encoded_dim = 768
+        # self.name = "clip"
+        # self.max_length = 77
         self.text_model = AutoModel.from_pretrained(modelpath)
 
         # Don't train the model
@@ -48,6 +53,8 @@ class MldTextEncoder(nn.Module):
             raise ValueError(f"Model {modelpath} not supported")
 
     def forward(self, texts: List[str]):
+        # [INFO] Mock avoid git-lfs from "AutoModel.from_pretrained"
+        # return torch.rand((len(texts), 1, 768)).cuda()
         # get prompt text embeddings
         if self.name in ["clip", "clip_hidden"]:
             text_inputs = self.tokenizer(

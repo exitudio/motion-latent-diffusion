@@ -3,6 +3,9 @@ Pytorch lightning version:
 ```
 ~/miniconda3/envs/mld/bin/pip install pytorch_lightning==1.8.6 --force-reinstall
 ~/miniconda3/envs/mld/bin/pip install  "torchmetrics<0.7" --force-reinstall
+
+### csgpu2 needs this:
+~/miniconda3/envs/mld/bin/pip install typing-inspect==0.8.0 typing_extensions==4.5.0 --force-reinstall
 ```
 
 ### Run
